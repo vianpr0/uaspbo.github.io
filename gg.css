@@ -1,0 +1,14 @@
+body {
+    width: 500px;
+    height: 500px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+.utama {
+    background-color: rgb(99, 168, 229);
+    width: 500px;
+    height: 1000px;
+}

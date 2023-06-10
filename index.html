@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Balap Mobil</title>
+  <script>
+    // Definisikan kelas "Mobil" dan "MobilBalap" di sini
+    class Mobil {
+      constructor(merk, kecepatanMax) {
+        this.merk = merk;
+        this.kecepatanMax = kecepatanMax;
+        this.kecepatanSaatIni = 0;
+      }
+
+      // Metode untuk mengendarai mobil dengan menambahkan kecepatan
+      kendarai(kecepatan) {
+        if (this.kecepatanSaatIni + kecepatan > this.kecepatanMax) {
+          alert("Mobil mencapai batas kecepatan maksimal!");
+          this.kecepatanSaatIni = this.kecepatanMax;
+        } else {
+          this.kecepatanSaatIni += kecepatan;
+          alert(`Mobil dipercepat menjadi ${this.kecepatanSaatIni} km/jam`);
+        }
+      }
+
+      // Metode untuk mengurangi kecepatan mobil
+      rem() {
+        this.kecepatanSaatIni = 0;
+        alert("Mobil dihentikan.");
+      }
+
+      // Metode untuk mendapatkan kecepatan saat ini
+      getKecepatan() {
+        return this.kecepatanSaatIni;
+      }
+    }
+
+    // Membuat kelas turunan "MobilBalap" yang mewarisi kelas "Mobil"
+    class MobilBalap extends Mobil {
+      constructor(merk, kecepatanMax, turboBoost) {
+        super(merk, kecepatanMax);
+        this.turboBoost = turboBoost;
+      }
+
+      // Overriding metode "kendarai()" dari kelas induk
+      kendarai(kecepatan) {
+        const kecepatanTotal = kecepatan + this.turboBoost;
+        super.kendarai(kecepatanTotal);
+      }
+    }
+
+    // Membuat objek dari kelas "Mobil" dan "MobilBalap"
+    const mobilBiasa = new Mobil("Toyota", 200);
+    const mobilBalap = new MobilBalap("Ferrari", 300, 50);
+    let mobilBaru;
+
+    function kendaraiMobilBiasa() {
+      mobilBiasa.kendarai(100);
+      document.getElementById("kecepatan-mobil-biasa").innerHTML = mobilBiasa.getKecepatan();
+    }
+
+    function kendaraiMobilBalap() {
+      mobilBalap.kendarai(100);
+      document.getElementById("kecepatan-mobil-balap").innerHTML = mobilBalap.getKecepatan();
+    }
+
+    function remMobilBiasa() {
+      mobilBiasa.rem();
+      document.getElementById("kecepatan-mobil-biasa").innerHTML = mobilBiasa.getKecepatan();
+    }
+
+    function remMobilBalap() {
+      mobilBalap.rem();
+      document.getElementById("kecepatan-mobil-balap").innerHTML = mobilBalap.getKecepatan();
+    }
+
+    function tambahMobil() {
+        // kode tambahan mobil...
+        const merk = prompt("Masukkan merek mobil:");
+        const kecepatanMax = parseInt(prompt("Masukkan kecepatan maksimal mobil:"));
+    
+        mobilBaru = new Mobil(merk, kecepatanMax); // Simpan referensi mobil baru ke variabel mobilBaru
+    
+        const mobilBaruElement = document.createElement("div");
+        mobilBaruElement.innerHTML = `
+          <h2>Mobil Baru</h2>
+          <p>Merek: <span>${merk}</span></p>
+          <p>Kecepatan: <span id="kecepatan-mobil-baru">0</span> km/jam</p>
+          <button onclick="kendaraiMobilBaru()">Kendarai Mobil Baru</button>
+          <button onclick="remMobilBaru()">Hentikan Mobil Baru</button>
+        `;
+        document.body.appendChild(mobilBaruElement);
+      }
+    
+      // Pindahkan fungsi kendaraiMobilBaru() dan remMobilBaru() di luar fungsi tambahMobil()
+      function kendaraiMobilBaru() {
+        mobilBaru.kendarai(100); // Perbarui kecepatan mobil baru
+        document.getElementById("kecepatan-mobil-baru").textContent = mobilBaru.getKecepatan();
+      }
+    
+      function remMobilBaru() {
+        mobilBaru.rem(); // Hentikan mobil baru
+        document.getElementById("kecepatan-mobil-baru").textContent = mobilBaru.getKecepatan();
+      }
+      
+      
+    
+  </script>
+</head>
+<body>
+  <h1>Balap Mobil</h1>
+  
+  <h2>Mobil Biasa</h2>
+  <p>Merek: <span id="merek-mobil-biasa">Toyota</span></p>
+  <p>Kecepatan: <span id="kecepatan-mobil-biasa">0</span> km/jam</p>
+  <button onclick="kendaraiMobilBiasa()">Kendarai Mobil Biasa</button>
+  <button onclick="remMobilBiasa()">Hentikan Mobil Biasa</button>
+
+  <h2>Mobil Balap</h2>
+  <p>Merek: <span id="merek-mobil-balap">Ferrari</span></p>
+  <p>Kecepatan: <span id="kecepatan-mobil-balap">0</span> km/jam</p>
+  <button onclick="kendaraiMobilBalap()">Kendarai Mobil Balap</button>
+  <button onclick="remMobilBalap()">Hentikan Mobil Balap</button>
+
+  <h2>Tambah Mobil</h2>
+  <button onclick="tambahMobil()">Tambah Mobil Baru</button>
+</body>
+</html>
