@@ -1,0 +1,84 @@
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f5f5f5;
+}
+
+.car-selection {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.car-selection h2 {
+  margin-top: 0;
+}
+.car-selection #car-list {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+.car-selection #car-list .car-item {
+  margin-right: 10px;
+}
+.car-selection #car-list .car-item input[type=radio] {
+  display: none;
+}
+.car-selection #car-list .car-item label {
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: #ddd;
+  cursor: pointer;
+}
+.car-selection #car-list .car-item label:hover {
+  background-color: #ccc;
+}
+.car-selection #car-list .car-item input[type=radio]:checked + label {
+  background-color: #007bff;
+  color: #fff;
+}
+.car-selection button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.race-track {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.race-track .car-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.race-track .car-info .car-image {
+  width: 120px;
+  height: auto;
+  margin-right: 20px;
+}
+.race-track .car-info .car-details h2 {
+  margin: 0;
+}
+.race-track .car-controls button {
+  padding: 10px 20px;
+  font-size: 16px;
+  margin-right: 10px;
+  border: none;
+  background-color: #ddd;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.race-track .car-controls button:last-child {
+  margin-right: 0;
+}
+.race-track .car-controls button:hover {
+  background-color: #ccc;
+}/*# sourceMappingURL=main.css.map */
