@@ -37,16 +37,28 @@
 }
 .car-selection #car-list .car-item input[type=radio]:checked + label {
   background-color: #007bff;
-  color: #fff;
+  color: #f5f5f5;
 }
 .car-selection button {
   padding: 10px 20px;
   font-size: 16px;
   border: none;
   background-color: #007bff;
-  color: #fff;
+  color: #f5f5f5;
   cursor: pointer;
   border-radius: 4px;
+}
+.car-selection button:hover {
+  opacity: 80%;
+}
+.car-selection button.btn-outline {
+  background-color: #f5f5f5;
+  border: 1px solid #007bff;
+  color: #007bff;
+}
+.car-selection button.btn-outline:hover {
+  background-color: #007bff;
+  color: #f5f5f5;
 }
 
 .race-track {
