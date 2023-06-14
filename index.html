@@ -5,30 +5,31 @@
 		<title>Balap Mobil</title>
 	</head>
 	<body>
-			<div class="container">
-				<div class="car-selection">
-					<h2>Pemilihan Mobil</h2>
-					<div id="car-list">
-						<div class="car-item">
-							<input type="radio" id="mobil-biasa" name="car-type" checked />
-							<label for="mobil-biasa" onclick="tombolDiklik(1)">Toyota</label>
-						
-						</div>
-						<div class="car-item">
-							<input type="radio" id="mobil-balap" name="car-type" />
-							<label for="mobil-biasa" onclick="tombolDiklik(2)">Ferrari</label>
-						</div>
+		<div class="container">
+			<div class="car-selection">
+				<h2>Pemilihan Mobil</h2>
+				<div id="car-list">
+					<div class="car-item">
+						<input type="radio" id="mobil-biasa" name="car-type" checked />
+						<label for="mobil-biasa">Toyota</label>
+					</div>
+					<div class="car-item">
+						<input type="radio" id="mobil-balap" name="car-type" />
+						<label for="mobil-balap">Ferrari</label>
+					</div>
 				</div>
-				<button onclick="tambahMobil()">Tambah Mobil Baru</button>
+				<button onclick="gantiMobil()">Konfirmasi Ganti Mobil</button>
+				<button class="btn-outline" onclick="tambahMobil()">
+					Tambah Mobil Baru
+				</button>
 			</div>
 
-			<div class="race-track">	
+			<div class="race-track">
 				<div class="car-info">
 					<img src="./assets/car.png" alt="Car" class="car-image" />
 					<div class="car-details">
-						<h2 id="output"></h2>
+						<h2 id="output">Mobil Toyota</h2>
 						<p>Kecepatan: <span id="kecepatan-mobil">0</span> km/jam</p>
-						<h1 id="outputa"></h1>
 					</div>
 				</div>
 				<div class="car-controls">

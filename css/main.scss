@@ -43,7 +43,7 @@ $primary-color: #007bff;
 
 			input[type="radio"]:checked + label {
 				background-color: $primary-color;
-				color: #fff;
+				color: #f5f5f5;
 			}
 		}
 	}
@@ -53,9 +53,24 @@ $primary-color: #007bff;
 		font-size: 16px;
 		border: none;
 		background-color: $primary-color;
-		color: #fff;
+		color: #f5f5f5;
 		cursor: pointer;
 		border-radius: 4px;
+
+		&:hover {
+			opacity: 80%;
+		}
+	}
+
+	button.btn-outline {
+		background-color: #f5f5f5;
+		border: 1px solid $primary-color;
+		color: $primary-color;
+
+		&:hover {
+			background-color: $primary-color;
+			color: #f5f5f5;
+		}
 	}
 }
 
